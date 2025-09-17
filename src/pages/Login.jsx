@@ -20,7 +20,19 @@ function Login() {
     }
   };
 
-  return <AuthForm title="Login" onSubmit={handleSubmit} />;
+  return (
+    <div>
+      <AuthForm title="Login" onSubmit={handleSubmit} />
+      <div className="w-full max-w-sm mx-auto mt-4 text-center">
+        <p>
+          Don't have an account?{' '}
+          <Link to="/register" className="text-blue-500">
+            Sign Up
+          </Link>
+        </p>
+      </div>
+    </div>
+  );
 }
 
 export default Login;
