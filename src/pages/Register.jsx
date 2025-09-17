@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link} from 'react-router-dom';
 import axios from 'axios';
 import AuthForm from '../components/AuthForm';
 
@@ -19,7 +19,20 @@ function Register() {
     }
   };
 
-  return <AuthForm title="Register" onSubmit={handleSubmit} />;
+  
+  return (
+    <div>
+      <AuthForm title="Register" onSubmit={handleSubmit} />;
+      <div className="w-full max-w-sm mx-auto mt-4 text-center">
+        <p>
+          Don't have an account?{' '}
+          <Link to="/login" className="text-blue-500">
+            Login
+          </Link>
+        </p>
+      </div>
+    </div>
+  );
 }
 
 export default Register;
